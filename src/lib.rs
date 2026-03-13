@@ -1,3 +1,4 @@
+#![allow(dead_code, unused)]
 // src/lib.rs
 // Main library file for the str_tools crate.
 // This file declares all modules and re-exports the public iterators for convenient usage.
