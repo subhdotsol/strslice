@@ -1,16 +1,16 @@
 [package]
 name = "strslice"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2024"
 authors = [
     "Subh <subhajitchaudhury05@gmail.com>",
-    "Naman <https://github.com/namanguptagit>",
-    "Rohit<rohitnarnolia88@gmail.com>",
+    "Naman <naman312000@gmail.com>",
+    "Rohit <rohitnarnolia88@gmail.com>",
 ]
-description = "ust library that provides zero copy string iterators for working with string slices. The library offers iterators similar to standard Rust string methods"
+description = "Rust library that provides zero copy string iterators for working with string slices. The library offers iterators similar to standard Rust string methods"
 license = "MIT"
-repository = "https://github.com/subhdotsol/str_split"
-homepage = "https://github.com/subhdotsol/str_split"
+repository = "https://github.com/subhdotsol/strslice"
+homepage = "https://github.com/subhdotsol/strslice"
 readme = "README.md"
 keywords = ["string", "iterators", "rust", "slice"]
 categories = ["text-processing", "no-std"]
