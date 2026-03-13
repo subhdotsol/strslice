@@ -4,14 +4,14 @@
 // Each item returned is a &'a str referencing the matched part of the original string.
 // Usage: `StrMatches::new(some_str, pattern)`
 
-struct StrMatches<'a, 'b> {
+pub struct StrMatches<'a, 'b> {
     text: &'a str,
     pattern: &'b str,
     cursor: usize,
 }
 
 impl<'a, 'b> StrMatches<'a, 'b> {
-    fn new(text: &'a str, pattern: &'b str) -> Self {
+    pub fn new(text: &'a str, pattern: &'b str) -> Self {
         Self {
             text,
             pattern,

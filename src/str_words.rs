@@ -4,7 +4,7 @@
 // Each item returned is a &'a str referencing the original string.
 // Usage: `StrWords::new(some_str)`
 
-struct StrWords<'a> {
+pub struct StrWords<'a> {
     text: &'a str,
     cursor: usize,
 }
