@@ -5,23 +5,23 @@
 // Usage: `StrSplitN::new(some_str, delimiter, max_splits)`
 
 // Defining the struct StrSplit that holds the state of out iterator
-pub struct StrSplit<'a> {
+pub struct StrSplit<'a, 'b> {
     remainder: Option<&'a str>,
-    delimiter: &'a str,
+    delimiter: &'b str,
 }
 
 // Implementation block for strsplit
-impl<'a> StrSplit<'a> {
-    pub fn new(haystack: &'a str, delimiter: &'a str) -> Self {
+impl<'a, 'b> StrSplit<'a, 'b> {
+    pub fn new(haystack: &'a str, delimiter: &'b str) -> Self {
         Self {
             remainder: Some(haystack), // part of the string which is not processed yet
-            delimiter,                 // substring we will split on
+            delimiter, // substring we will split on
         }
     }
 }
 
 // Implement the iterator trait for the strsplit
-impl<'a> Iterator for StrSplit<'a> {
+impl<'a, 'b> Iterator for StrSplit<'a, 'b> {
     // each iteration returns a string slice borrowed from the original string
     type Item = &'a str;
 
