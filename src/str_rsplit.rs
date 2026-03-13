@@ -4,13 +4,13 @@
 // Each item returned is a &'a str referencing the original string.
 // Usage: `StrRSpli::new(some_str, delimiter)`
 
-pub struct StrRSplit<'a> {
+pub struct StrRSplit<'a, 'b> {
     remainder: Option<&'a str>,
-    delimiter: &'a str,
+    delimiter: &'b str,
 }
 
-impl<'a> StrRSplit<'a> {
-    pub fn new(haystack: &'a str, delimiter: &'a str) -> Self {
+impl<'a, 'b> StrRSplit<'a, 'b> {
+    pub fn new(haystack: &'a str, delimiter: &'b str) -> Self {
         Self {
             remainder: Some(haystack),
             delimiter,
@@ -18,7 +18,7 @@ impl<'a> StrRSplit<'a> {
     }
 }
 
-impl<'a> Iterator for StrRSplit<'a> {
+impl<'a, 'b> Iterator for StrRSplit<'a, 'b> {
     type Item = &'a str;
     fn next(&mut self) -> Option<Self::Item> {
         let remainder = self.remainder.as_mut()?;
