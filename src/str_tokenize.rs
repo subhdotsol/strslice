@@ -185,4 +185,49 @@ mod tests {
         let tokens: Vec<Token> = Tokenizer::new("rust").collect();
         assert_eq!(tokens, vec![Token::Identifier("rust")]);
     }
+
+    #[test]
+    fn test_string_literal_and_operators() {
+        let input = r#"x == "hello" || y"#;
+        let tokens: Vec<Token> = Tokenizer::new(input).collect();
+        assert_eq!(
+            tokens,
+            vec![
+                Token::Identifier("x"),
+                Token::Whitespace(" "),
+                Token::Operator("=="),
+                Token::Whitespace(" "),
+                Token::StringLiteral("\"hello\""),
+                Token::Whitespace(" "),
+                Token::Operator("||"),
+                Token::Whitespace(" "),
+                Token::Identifier("y"),
+            ]
+        );
+    }
+
+    #[test]
+    fn test_keywords_and_punctuation() {
+        let input = "fn main() { return 0; }";
+        let tokens: Vec<Token> = Tokenizer::new(input).collect();
+        assert_eq!(
+            tokens,
+            vec![
+                Token::Keyword("fn"),
+                Token::Whitespace(" "),
+                Token::Identifier("main"),
+                Token::Punctuation("("),
+                Token::Punctuation(")"),
+                Token::Whitespace(" "),
+                Token::Punctuation("{"),
+                Token::Whitespace(" "),
+                Token::Keyword("return"),
+                Token::Whitespace(" "),
+                Token::Number("0"),
+                Token::Punctuation(";"),
+                Token::Whitespace(" "),
+                Token::Punctuation("}"),
+            ]
+        );
+    }
 }
