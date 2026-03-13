@@ -1,8 +1,8 @@
 #![allow(dead_code, unused)]
 // src/lib.rs
-// Main library file for the str_tools crate.
+// Main library file for the strslice crate.
 // This file declares all modules and re-exports the public iterators for convenient usage.
-// Users can import iterators via `use str_tools::*;`
+// Users can import iterators via `use strslice::*;`
 
 pub mod str_lines;
 pub mod str_matches;
