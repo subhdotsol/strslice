@@ -12,7 +12,7 @@ license = "MIT"
 repository = "https://github.com/subhdotsol/str_split"
 homepage = "https://github.com/subhdotsol/str_split"
 readme = "README.md"
-keywords = ["string", "iterators", "rust", "string methods"]
-categories = ["command-line-utilities", "asynchronous"]
+keywords = ["string", "iterators", "rust", "slice"]
+categories = ["text-processing", "no-std"]
 
 [dependencies]
